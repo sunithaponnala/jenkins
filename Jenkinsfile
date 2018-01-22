@@ -4,5 +4,8 @@ node {
 	stage('dependencies') {sh "./dependencies.sh"}
 	stage('keys') {sh "./keys.sh"}
 	stage('installation') {sh "./installation.sh"}
+
+	stage('pull') {sh "./docker pull image"}
 	 }
+
 
