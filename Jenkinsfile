@@ -6,6 +6,6 @@ node {
 	stage('installation') {sh "./installation.sh"}
 
 	stage('pull') {sh "sudo docker pull tomcat"}
-	 }
-
+	stage('tomcat') {sh "sudo docker run --name tomcat01 -d -p 80:8080 tomcat"} 
+       }
 
