@@ -6,6 +6,8 @@ node ('node01') {
         stage('installation') {sh "./installation.sh"}
 
         stage('pull') {sh "sudo docker pull tomcat"}
+
+	stage ('remove previous container') {sh ' sudo docker rm `sudo docker ps -aq --no-trunc --filter "ancestor=tomcat"` '}
         stage('tomcat') {sh "sudo docker run --name tomcat01 -d -p 80:8080 tomcat"}
        }
 
