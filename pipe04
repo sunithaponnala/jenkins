@@ -1,5 +1,6 @@
 node ('node01') {
-    stage('scm') {git "https://github.com/sunithaponnala/jenkins.git"}
+input 'do you want to start'   
+ stage('scm') {git "https://github.com/sunithaponnala/jenkins.git"}
     stage('uninstall') {sh "sudo apt-get autoremove  -y docker-ce"}
         stage('dependencies') {sh "./dependencies.sh"}
         stage('keys') {sh "./keys.sh"}
